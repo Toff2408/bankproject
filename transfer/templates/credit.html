@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+
+{% block header %}
+  {% include "header.html" %}
+{% endblock header %}
+
+{% block content %}
+  
+
+      <!-- transfer page  -->
+      <div class="transfer">
+        <h3 class="title">Credit page</h3>
+        <div class="container">
+            <div class="row">
+                <form action="{% url 'credit' %}" method="POST">
+                  {% csrf_token %}
+                  <div class="mb-3">
+                    <h5 class="">Available Balance: ${{figure|floatformat:2|intcomma}}</h5>
+                  </div>
+                    <div class="mb-3">
+                        <label for="exampleInputtext1" class="form-label">Amount</label>
+                        <input type="text" name="amount" class="form-control" id="exampleInputtext1" aria-describedby="textHelp" required>
+                      </div>
+                    <div class="mb-3">
+                        <label for="exampleInputtext1" class="form-label">Account Name</label>
+                        <input type="text" name="acc_name" class="form-control" id="exampleInputtext1" aria-describedby="textHelp" required>
+                      </div>
+                    <div class="mb-3">
+                        <label for="exampleInputtext1" class="form-label">Purpose</label>
+                        <input type="text" name="purpose" class="form-control" id="exampleInputtext1" aria-describedby="textHelp" required>
+                      </div>
+                    <div class="mb-3">
+                        <label for="exampleInputtext1" class="form-label">Bank Name</label>
+                        <input type="text" name="bank" class="form-control" id="exampleInputtext1" aria-describedby="textHelp" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+      </div>
+        
+   
+{% endblock content %}

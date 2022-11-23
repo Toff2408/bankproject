@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block header %} {% include "header.html" %}{% endblock header %}
+
+{% block content %}
+  
+        <!-- mainacct -->
+        <div class="mainacct">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-5">
+                      <div class="card">
+                          <h5 class="title">Checking's Account</h5>
+                          <p>${{new_balance|floatformat:2|intcomma}}</p>
+                      </div>
+                      <a href="{% url 'checkings' %}" class="btn btn-primary">MAke a transfer</a>
+                      <a href="{% url 'credit' %}" class="btn btn-primary">Credit</a>
+                      <a href="{% url 'cktrs' %}" class="btn btn-primary">To Savings</a>
+                      <a href="{% url 'me2me' %}" class="btn btn-primary">Esternal acct</a>
+
+                  </div>
+                  <div class="col-lg-5">
+                    <div class="card">
+                      <h5 class="title">Saving's Account</h5>
+                      <p>$ {{show_bal|floatformat:2|intcomma}}</p>
+                  </div> 
+                  <a href="{% url 'savings' %}" class="btn btn-primary">MAke a transfer</a>
+                  <a href="{% url 'savings_cd' %}" class="btn btn-primary">Credit</a>
+              </div>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+      
+      <!-- table  -->
+      <div class="history_table">
+        <h3 class="title">HISTORY</h3>
+          <table class="table">
+              <thead>
+                <tr>
+                  <!-- <th scope="col">id</th> -->
+                  <th scope="col">name</th>
+                  <th scope="col">bank</th>
+                  <th scope="col">debit</th>
+                  <th scope="col">credit</th>
+                  <th scope="col">successful</th>
+                  <th scope="col">Checking</th>
+                  <th scope="col">date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% if history2 %} 
+                  {% for item in history2 %}
+                    <tr>
+                      <!-- <th scope="row">{{item.id}}</th> -->
+                      <td>{{item.s_acc_holder}}</td>
+                      <td>{{item.s_bank}}</td>
+                      <td>{{item.s_debit}}</td>
+                      <td>{{item.s_credit}}</td>
+                      <td>{{item.s_success}}</td>
+                      <td>{{item.Savings_account}}</td>
+                      <td>{{item.s_debit_date}}</td>
+                    </tr>
+                  {% endfor %}
+                {% endif %}
+
+                    <br>
+                {% if history %}
+                  {% for item in history %}
+                    <tr>
+                      <!-- <th scope="row">{{item.id}}</th> -->
+                      <td>{{item.c_acc_holder}}</td>
+                      <td>{{item.c_bank}}</td>
+                      <td>{{item.c_debit}}</td>
+                      <td>{{item.c_credit}}</td>
+                      <td>{{item.c_success}}</td>
+                      <td>{{item.checkings_account}}</td>
+                      <td>{{item.c_debit_date}}</td>
+                    </tr>
+                  {% endfor %}
+                {% endif %}
+              </tbody>
+          
+            </table>
+      </div>
+      
+  
+{% endblock content %}

@@ -1,0 +1,55 @@
+
+ <!-- navbar -->
+          
+        <div class="banking">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <nav class="navbar navbar-expand-lg ">
+                        <div class="container-fluid">
+                          <a class="navbar-brand" href="index.html"><img src="https://image.shutterstock.com/image-vector/bank-icon-logo-vector-260nw-399995245.jpg" style="width:100px ;" alt=""> Investment Banking</a>
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                              {% if user.is_authenticated %}
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Personal</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Savings</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="{% url 'signout' %}">Signout</a>
+                              </li>
+                              {% else %}
+                              <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Business</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="{% url 'index' %}">Personal</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Mortage</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Savings</a>
+                              </li>
+                              <li class="nav-item">
+                              <li class="nav-item for_signin">
+                                <a class="nav-link" href="{% url 'index' %}">Signin</a>
+                              </li>
+                              <li class="nav-item for_signin">
+                                <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+                              </li>
+                              {% endif %}
+                              
+                            </ul>
+                          </div>
+                        </div>
+                      </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- banner -->

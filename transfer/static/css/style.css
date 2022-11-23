@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.namove{
+    text-align: end;
+}
+.namove a{
+    padding-left: 2rem;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: blue;
+}
+.banking a{
+    color: white;
+}
+#navbarSupportedContent{
+    margin-left: 30rem;
+    color: white;
+}
+#navbarSupportedContent a{
+    color: white;
+    padding-left: 3rem;
+}
+.banking{
+    background: brown;
+}
+
+/* hero section */
+
+.hero{
+    background-image: url(https://www.anbtx.com/getmedia/80078bf0-386a-4c1c-a469-654b08afaaec/anbtx-location-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: visible;
+    background-attachment: fixed;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+.hero .title{
+    text-align: center;
+    width: 100%;
+    background-color: brown;
+    color: white;
+    width: 20rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+.hero .form-control{
+    box-shadow: none;
+}
+.hero input:focus{
+    outline: none;
+}
+.hero .card{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    transform: translateY(-8px);
+}
+.hero .more{
+    padding-top: 1rem;
+    margin-left:7rem;
+}
+.hero .more li{
+    padding-top: 5px;
+    text-transform: capitalize;
+    text-decoration: none;
+    
+}
+.hero .more li a{
+    color: brown;
+}
+.hero .btn{
+    background-color: brown;
+    color: white;
+}
+
+
+.mainacct{
+    padding-top: 4rem;
+}
+.mainacct h5{
+    text-align: center;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: white;
+}
+.mainacct .card{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background: gray;
+}
+.mainacct p{
+    text-align: center;
+    font-size: larger;
+    color: white;
+}
+.history_table .title{
+    text-align: center;
+    padding-top: 100px;
+}
+
+.transfer h3{
+    text-align: center;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.transfer input{
+    width: 18rem;
+}
+.success .h3{
+    text-align: center;
+    padding-top: 5rem;padding-bottom: 3rem;
+}
+.success .card{
+    padding-top: 3rem;padding-bottom: 3rem;padding-left: 2rem;
+}
